@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get "users/show"
-  get "users/edit"
-  get "users/update"
-  get "users/index"
+  # ユーザー関連（プロフィール、一覧など）
+  resources :users, only: [:index, :show, :edit, :update]
+  # deviseのユーザー認証関連
   devise_for :users
-  get "home/index"
-
+  # ホーム画面の設定
   root "home#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
