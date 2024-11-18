@@ -3,36 +3,51 @@
   <head>
     <title><%= content_for(:title) || "Hirogaru Art" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :stylesheets %>
     <%= yield :head %>
-
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-<body>
-  <header class="header">
+  <body>
+<header>
+  <div class="nav-wrapper">
+    <%= link_to "Hirogaru Art", root_path, class: "site-title" %>
     <nav>
-      <ul>
-        <li><%= link_to "ホーム", root_path %></li>
-        <li><%= link_to "プロフィール", user_path(current_user) if user_signed_in? %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-button" %></li>
-        <li><%= link_to "ログイン", new_user_session_path unless user_signed_in? %></li>
-        <li><%= link_to "サインアップ", new_user_registration_path, data: { turbo: false } unless user_signed_in? %></li>
-      </ul>
+      <%= link_to "ホーム", root_path, class: "nav-link" %>
+      <% if user_signed_in? %>
+        <%= link_to "プロフィール", user_path(current_user), class: "nav-link" %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link logout-btn" %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+      <% end %>
     </nav>
-  </header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-</body>
+  </div>
+</header>
 
+    <% if notice %>
+      <div class="flash notice">
+        <%= notice %>
+      </div>
+    <% end %>
+    
+    <% if alert %>
+      <div class="flash alert">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <main class="main-content">
+      <%= yield %>
+    </main>
+  </body>
 </html>
