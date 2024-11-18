@@ -1,8 +1,8 @@
 <%= form_with(model: post, class: "post-form") do |f| %>
   <% if post.errors.any? %>
-    <div class="bg-red-50 p-4 rounded mb-4">
-      <h2 class="text-red-700 text-lg mb-2"><%= pluralize(post.errors.count, "error") %> が発生しました:</h2>
-      <ul class="list-disc list-inside text-red-600">
+    <div class="error-messages">
+      <h2 class="error-title"><%= pluralize(post.errors.count, "error") %> が発生しました:</h2>
+      <ul class="error-list">
         <% post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -10,29 +10,29 @@
     </div>
   <% end %>
 
-  <div class="mb-4">
-    <%= f.label :title, "タイトル", class: "block text-gray-700 font-bold mb-2" %>
-    <%= f.text_field :title, class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+  <div class="form-group">
+    <%= f.label :title, "タイトル", class: "form-label" %>
+    <%= f.text_field :title, class: "form-input" %>
   </div>
 
-  <div class="mb-4">
-    <%= f.label :content, "内容", class: "block text-gray-700 font-bold mb-2" %>
-    <%= f.text_area :content, rows: 5, class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+  <div class="form-group">
+    <%= f.label :content, "内容", class: "form-label" %>
+    <%= f.text_area :content, rows: 5, class: "form-textarea" %>
   </div>
 
-  <div class="mb-4">
-    <%= f.label :image, "画像", class: "block text-gray-700 font-bold mb-2" %>
-    <%= f.file_field :image, class: "w-full" %>
+  <div class="form-group">
+    <%= f.label :image, "画像", class: "form-label" %>
+    <%= f.file_field :image, class: "form-file-input" %>
   </div>
 
-  <div class="mb-4">
-    <label class="flex items-center">
-      <%= f.check_box :portfolio, class: "mr-2" %>
-      <span class="text-gray-700">ポートフォリオとして追加する</span>
+  <div class="form-group-checkbox">
+    <label class="checkbox-container">
+      <%= f.check_box :portfolio, class: "form-checkbox" %>
+      <span class="checkbox-label">ポートフォリオとして追加する</span>
     </label>
   </div>
 
-  <div class="flex justify-end">
-    <%= f.submit "送信", class: "bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" %>
+  <div class="form-actions">
+    <%= f.submit "送信", class: "form-submit" %>
   </div>
 <% end %>

@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   private
 
   def image_presence
-    errors.add(:image, "画像を添付してください") unless image.attached?
+    if portfolio? && !image.attached?
+      errors.add(:image, "ポートフォリオの場合は画像を添付してください")
+    end
   end
 end

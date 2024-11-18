@@ -209,7 +209,6 @@
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  margin-top: 1.5rem;
 }
 
 .action-button {
@@ -226,6 +225,7 @@
 .back-button {
   background-color: #e5e7eb;
   color: #374151;
+  margin-top: 0  !important;
 }
 
 .back-button:hover {
@@ -248,4 +248,146 @@
 
 .delete-button:hover {
   background-color: #dc2626;
+}
+
+/* コンテナ全体 */
+.post-container {
+  max-width: 600px; /* 最大幅 */
+  margin: 0 auto; /* 中央寄せ */
+  padding: 20px; /* 内側余白 */
+}
+
+/* タイトル */
+.post-title {
+  font-size: 24px; /* フォントサイズ */
+  font-weight: bold; /* 太字 */
+  margin-bottom: 20px; /* 下余白 */
+  color: #333; /* 文字色 */
+  text-align: center; /* 中央揃え */
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px; /* 上余白 */
+  padding: 10px 20px; /* ボタンの内側余白 */
+  font-size: 16px; /* フォントサイズ */
+  font-weight: bold; /* 太字 */
+  color: #fff; /* 文字色 */
+  background-color: #007bff; /* ボタンの背景色 */
+  border: none; /* 枠線なし */
+  border-radius: 5px; /* 角丸 */
+  text-decoration: none; /* 下線を消す */
+  text-align: center; /* テキスト中央揃え */
+  cursor: pointer; /* カーソルをポインタに */
+  transition: background-color 0.3s ease; /* 背景色変化のアニメーション */
+}
+
+.back-link:hover {
+  color: #000; /* ホバー時の色 */
+}
+
+/* フォーム全体のスタイル */
+.post-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* エラーメッセージ */
+.error-messages {
+  background-color: #fdecea;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  color: #d32f2f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.error-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.error-list li {
+  color: #d32f2f;
+}
+
+/* ラベルのスタイル */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 入力フィールドのスタイル */
+.form-input,
+.form-textarea,
+.form-file-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-file-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* テキストエリアのスタイル */
+.form-textarea {
+  resize: vertical;
+}
+
+/* チェックボックスのスタイル */
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+}
+
+.checkbox-label {
+  color: #333;
+}
+
+/* 送信ボタン */
+.form-actions {
+  text-align: right;
+}
+
+.form-submit {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #0056b3;
 }
