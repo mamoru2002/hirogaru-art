@@ -1,0 +1,189 @@
+/* プロフィール全体のレイアウト */
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ヘッダー背景 */
+  .profile-header {
+    height: 150px;
+    background: linear-gradient(to right, #4f46e5, #6d28d9);
+    position: relative;
+  }
+  
+/* プロフィール画像 */
+.profile-profile_image {
+    width: 100px; /* 固定幅 */
+    height: 100px; /* 固定高さ */
+    border-radius: 50%; /* 丸くする */
+    border: 4px solid #ffffff; /* 枠線 */
+    position: absolute; /* 位置指定 */
+    bottom: -50px; /* 背景から浮き上がらせる */
+    left: 20px; /* 左に配置 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影 */
+    object-fit: cover; /* アスペクト比を保ちながらトリミング */
+    object-position: center; /* 中央を基準にトリミング */
+  }
+  
+  /* ユーザー情報 */
+  .profile-info {
+    padding: 4rem 2rem 2rem;
+    text-align: left;
+  }
+  
+  .profile-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .profile-info p {
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  /* プロフィール編集ボタン */
+  .profile-edit-btn {
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-edit-btn:hover {
+    background-color: #6d28d9;
+  }
+  
+  /* 自己紹介 */
+  .profile-bio {
+    margin-top: 2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* 自己紹介文の基本スタイル */
+.bio-text {
+    margin-top: 2rem !important;
+    overflow: hidden; /* 内容が溢れる部分を隠す */
+    display: -webkit-box; /* Flexboxのように動作 */
+    -webkit-line-clamp: 5; /* 5行に制限 */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis; /* 溢れる部分を省略記号で表示 */
+    max-height: 7.5em; /* 5行分の高さ */
+    transition: max-height 0.3s ease; /* アニメーション */
+  }
+  
+  /* 全文表示時 */
+  .bio-text.expanded {
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    max-height: none;
+  }
+  
+  /* 続きを見るボタンのスタイル */
+  .show-more-btn {
+    margin-top: 1rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .show-more-btn:hover {
+    background-color: #6d28d9;
+  }
+  
+  /* SNSリンクの親要素 */
+  .profile-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* SNSリンクの個別スタイル */
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover時のアニメーション */
+  .social-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* アイコンのスタイル */
+  .social-link i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-link:hover i {
+    transform: rotate(20deg);
+  }
+  
+  /* SNSリンクのカラーテーマ */
+  .social-link.website {
+    color: #0077b6;
+    background-color: #e0f7ff;
+  }
+  
+  .social-link.website:hover {
+    color: #005f8a;
+    background-color: #d0f0ff;
+  }
+  
+  .social-link.twitter {
+    color: #1da1f2;
+    background-color: #e8f5fd;
+  }
+  
+  .social-link.twitter:hover {
+    color: #1776d1;
+    background-color: #cce7fa;
+  }
+  
+  .social-link.instagram {
+    color: #e1306c;
+    background-color: #fde4ec;
+  }
+  
+  .social-link.instagram:hover {
+    color: #bf2354;
+    background-color: #fcd1e1;
+  }
+  
+  .social-link.facebook {
+    color: #4267b2;
+    background-color: #ebf3ff;
+  }
+  
+  .social-link.facebook:hover {
+    color: #365899;
+    background-color: #d8e7ff;
+  }
