@@ -221,6 +221,11 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* 投稿タイトル */
 .post-title {
   font-size: 1.25rem;
@@ -245,11 +250,10 @@
   margin-bottom: 1rem;
 }
 
-/* 詳細ページリンク */
-.read-more-link {
-  color: #007bff;
+/* 投稿カード全体をリンク化 */
+.post-card-link {
   text-decoration: none;
-  font-weight: bold;
+  color: inherit; /* テキストカラーを継承 */
 }
 
 .read-more-link:hover {

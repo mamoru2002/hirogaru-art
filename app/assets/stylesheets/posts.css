@@ -39,64 +39,86 @@
     gap: 1.5rem;
   }
   
-  /* 投稿カード */
-  .post-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  /* 投稿者情報 */
-  .post-user {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .user-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #e5e7eb;
-    margin-right: 1rem;
-  }
-  
-  .user-details {
-    flex: 1;
-  }
-  
-  .post-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #374151;
-    margin: 0;
-  }
-  
-  .post-meta {
-    font-size: 0.9rem;
-    color: #6b7280;
-  }
-  
-  /* 投稿画像 */
-  .post-image {
-    margin-bottom: 1rem;
-  }
-  
-  .image-content {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  /* 投稿内容 */
-  .post-description {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #4b5563;
-  }
+/* コンテナの基本設定 */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* グリッドレイアウト */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem; /* カード間の隙間 */
+}
+
+/* 投稿カード全体のリンクスタイル */
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card-link:hover .post-card {
+  transform: translateY(-5px); /* ホバー時の動き */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 投稿カードのスタイル */
+.post-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 投稿画像 */
+.post-image img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* 最大高さを制限 */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 投稿者情報 */
+.post-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #374151;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* 投稿内容 */
+.post-description {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
