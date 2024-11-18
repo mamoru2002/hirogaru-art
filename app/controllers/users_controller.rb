@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @userは before_action :set_user で設定済み
+    # @userは set_user で取得済み
   end
 
   def edit
-    # @userは before_action :set_user で設定済み
+    # @userは set_user で取得済み
   end
 
   def update
@@ -27,16 +27,15 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: 'ユーザーが見つかりません'
   end
 
   def user_params
-    params.require(:user).permit(:username, :bio, :website, 
-                                :twitter, :instagram, :facebook, :profile_image)
+    params.require(:user).permit(:username, :bio, :website, :twitter, :instagram, :facebook, :profile_image)
   end
 
   def ensure_correct_user
-    unless @user == current_user
-      redirect_to users_path, alert: '他のユーザーの情報は編集できません'
-    end
+    redirect_to users_path, alert: '他のユーザーの情報は編集できません' unless current_user == @user
   end
 end
