@@ -57,4 +57,4 @@ group :test do
 end
 
 gem "devise"
-gem 'importmap-rails'
+gem 'image_processing', '~> 1.2'
