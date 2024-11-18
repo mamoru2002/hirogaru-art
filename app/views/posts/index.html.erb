@@ -30,6 +30,13 @@
 
           <!-- 投稿内容 -->
           <p class="post-description"><%= truncate(post.content, length: 100) %></p>
+
+          <!-- ポートフォリオタグ -->
+          <% if post.portfolio? %>
+            <div class="portfolio-tag">
+              ポートフォリオ
+            </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>

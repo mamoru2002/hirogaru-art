@@ -122,3 +122,130 @@
   color: #4b5563;
   line-height: 1.5;
 }
+
+/* 投稿詳細ページ用 */
+.post-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* 要素が重ならないように設定 */
+}
+
+/* 投稿ヘッダー */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #374151;
+  margin: 0;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* 投稿画像 */
+.post-image {
+  margin-bottom: 1.5rem; /* 画像と他の要素間のスペースを追加 */
+}
+
+.post-image img {
+  width: 100%; /* コンテナ幅にフィット */
+  height: auto;
+  max-height: 400px; /* 最大高さを制限 */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block; /* 画像がインライン要素にならないようにする */
+}
+
+/* 投稿内容 */
+.post-content {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 10rem;
+  margin-bottom: 1rem; 
+}
+
+/* ポートフォリオタグ */
+.portfolio-tag {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  clear: both;
+}
+
+/* アクションボタン */
+.post-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.back-button:hover {
+  background-color: #d1d5db;
+}
+
+.edit-button {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.edit-button:hover {
+  background-color: #2563eb;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
