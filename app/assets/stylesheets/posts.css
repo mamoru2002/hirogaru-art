@@ -1,0 +1,80 @@
+.post-container {
+    background-color: #f9fafb; /* Light gray background */
+    border: 1px solid #e5e7eb; /* Border with subtle shadow */
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Post Header Styling */
+.post-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151; /* Dark Gray */
+    margin-bottom: 8px;
+}
+
+/* Post Content Styling */
+.post-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4b5563; /* Medium Gray */
+}
+
+/* Form Styling */
+.post-form {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db; /* Border for input fields */
+    border-radius: 8px;
+    padding: 24px;
+    margin: 16px 0;
+}
+
+.post-form input,
+.post-form textarea,
+.post-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+    border-color: #3b82f6; /* Focused Blue */
+}
+
+.post-form button {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.post-form button:hover {
+    background-color: #2563eb; /* Darker Blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post-container {
+        padding: 12px;
+    }
+
+    .post-form {
+        padding: 16px;
+    }
+}

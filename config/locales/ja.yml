@@ -1,0 +1,34 @@
+ja:
+  time:
+    formats:
+      long: "%Y年%m月%d日 %H:%M"
+      
+  datetime:
+    distance_in_words:
+      less_than_x_seconds:
+        one: "1秒未満"
+        other: "%{count}秒未満"
+      x_seconds:
+        one: "1秒"
+        other: "%{count}秒"
+      x_minutes:
+        one: "1分前"
+        other: "%{count}分前"
+      about_x_hours:
+        one: "約1時間前"
+        other: "約%{count}時間前"
+      x_days:
+        one: "1日前"
+        other: "%{count}日前"
+      about_x_months:
+        one: "約1ヶ月前"
+        other: "約%{count}ヶ月前"
+      about_x_years:
+        one: "約1年前"
+        other: "約%{count}年前"
+      over_x_years:
+        one: "1年以上"
+        other: "%{count}年以上"
+      almost_x_years:
+        one: "ほぼ1年"
+        other: "ほぼ%{count}年"
