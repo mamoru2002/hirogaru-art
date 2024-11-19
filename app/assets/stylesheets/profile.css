@@ -237,7 +237,6 @@
 .post-image {
   width: 100%;
   height: auto;
-  max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
