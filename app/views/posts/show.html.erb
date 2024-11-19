@@ -37,7 +37,6 @@
   <div class="post-actions">
     <%= link_to '戻る', posts_path, class: "action-button back-button" %>
     <% if current_user == @post.user %>
-      <%= link_to '編集', edit_post_path(@post), class: "action-button edit-button" %>
       <%= button_to '削除', post_path(@post), method: :delete, class: "action-button delete-button", 
           data: { confirm: '本当に削除しますか？' } %>
     <% end %>

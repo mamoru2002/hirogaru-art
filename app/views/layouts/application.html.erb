@@ -6,14 +6,13 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= yield :stylesheets %>
     <%= yield :head %>
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+    <%= yield :stylesheets %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -25,6 +24,7 @@
       <%= link_to "ホーム", root_path, class: "nav-link" %>
       <% if user_signed_in? %>
         <%= link_to "プロフィール", user_path(current_user), class: "nav-link" %>
+        <%= link_to "アカウント設定", edit_user_registration_path, class: "nav-link" %>
         <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link logout-btn" %>
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
@@ -49,5 +49,12 @@
     <main class="main-content">
       <%= yield %>
     </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p><%= Time.current.year %> Hirogaru Art.</p>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

@@ -39,19 +39,6 @@
     gap: 1.5rem;
   }
   
-/* コンテナの基本設定 */
-.main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* グリッドレイアウト */
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem; /* カード間の隙間 */
-}
 
 /* 投稿カード全体のリンクスタイル */
 .post-card-link {
@@ -105,11 +92,7 @@
   flex-direction: column;
 }
 
-.post-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #374151;
-}
+
 
 .post-meta {
   font-size: 0.9rem;
@@ -127,12 +110,12 @@
 .post-detail-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 2rem; /* 内側余白を増やす */
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* 要素が重ならないように設定 */
+  margin-bottom: 2rem;
 }
 
 /* 投稿ヘッダー */
@@ -142,25 +125,11 @@
   margin-bottom: 1.5rem;
 }
 
-.user-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 1rem;
-}
-
 .user-details {
   display: flex;
   flex-direction: column;
 }
 
-.post-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #374151;
-  margin: 0;
-}
 
 .post-meta {
   font-size: 0.9rem;
@@ -186,8 +155,8 @@
   font-size: 1rem;
   color: #4b5563;
   line-height: 1.6;
-  margin-top: 10rem;
-  margin-bottom: 1rem; 
+  margin-top: 150px; /* 上部余白 */
+  margin-bottom: 1.5rem; /* 下部余白 */
 }
 
 /* ポートフォリオタグ */
@@ -199,9 +168,8 @@
   border-radius: 20px;
   text-align: center;
   display: inline-block;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  clear: both;
+  margin-top: 1.5rem; /* 上部余白を増やす */
+  margin-bottom: 1.5rem; /* 下部余白を追加 */
 }
 
 /* アクションボタン */
@@ -230,15 +198,6 @@
 
 .back-button:hover {
   background-color: #d1d5db;
-}
-
-.edit-button {
-  background-color: #3b82f6;
-  color: #ffffff;
-}
-
-.edit-button:hover {
-  background-color: #2563eb;
 }
 
 .delete-button {
@@ -390,4 +349,186 @@
 
 .form-submit:hover {
   background-color: #0056b3;
+}
+
+/* プロフィールコンテナ */
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* プロフィールヘッダー */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #e5e7eb;
+}
+
+.username {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #374151;
+  margin: 10px 0;
+}
+
+.profile-edit-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.profile-edit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 自己紹介 */
+.profile-bio-container {
+  margin-bottom: 20px;
+}
+
+.bio-text {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  overflow: hidden;
+  max-height: 100px;
+  text-overflow: ellipsis;
+}
+
+.show-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.no-bio {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* SNSリンク */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.social-link {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* タブナビゲーション */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.tab-btn:hover {
+  background-color: #e2e6ea;
+}
+
+.tab-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 隠されたタブコンテンツ */
+.tab-content.hidden {
+  display: none;
+}
+
+
+/* 投稿カード */
+.post-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.post-snippet {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.no-posts {
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
 }

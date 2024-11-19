@@ -38,4 +38,6 @@ class UsersController < ApplicationController
   def ensure_correct_user
     redirect_to users_path, alert: '他のユーザーの情報は編集できません' unless current_user == @user
   end
+
+
 end

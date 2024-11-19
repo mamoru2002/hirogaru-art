@@ -63,24 +63,48 @@
   </div>
 </div>
 
-<!-- ユーザーの投稿一覧 -->
-<div class="user-posts-container">
-  <h2 class="user-posts-title"><%= @user.username %>さんの投稿</h2>
+ <!-- タブナビゲーション -->
+  <div class="tab-navigation">
+    <button class="tab-btn active" data-tab="portfolio">ポートフォリオ</button>
+    <button class="tab-btn" data-tab="all-posts">全ての投稿</button>
+  </div>
 
+<!-- 投稿一覧 -->
+<div class="tab-content" id="portfolio">
+  <h2 class="tab-title">ポートフォリオ投稿</h2>
+  <% portfolio_posts = @user.posts.where(portfolio: true) %>
+  <% if portfolio_posts.any? %>
+    <div class="post-grid">
+      <% portfolio_posts.each do |post| %>
+        <%= link_to post_path(post), class: "post-card-link" do %>
+          <div class="post-card">
+            <h3 class="post-title"><%= post.title %></h3>
+            <% if post.image.attached? %>
+              <!-- ActiveStorageで画像をリサイズして表示 -->
+              <%= image_tag post.image.variant(resize_to_limit: [300, 300]).processed, class: "post-image" %>
+            <% end %>
+            <p class="post-snippet"><%= truncate(post.content, length: 100) %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="no-posts">ポートフォリオ投稿がまだありません。</p>
+  <% end %>
+</div>
+
+<div class="tab-content hidden" id="all-posts">
+  <h2 class="tab-title">全ての投稿</h2>
   <% if @user.posts.any? %>
     <div class="post-grid">
       <% @user.posts.each do |post| %>
         <%= link_to post_path(post), class: "post-card-link" do %>
           <div class="post-card">
-            <!-- 投稿タイトル -->
             <h3 class="post-title"><%= post.title %></h3>
-            
-            <!-- 投稿画像 -->
             <% if post.image.attached? %>
-              <%= image_tag post.image.variant(resize_to_limit: [300, 300]), class: "post-image" %>
+              <!-- ActiveStorageで画像をリサイズして表示 -->
+              <%= image_tag post.image.variant(resize_to_limit: [300, 300]).processed, class: "post-image" %>
             <% end %>
-            
-            <!-- 投稿内容の抜粋 -->
             <p class="post-snippet"><%= truncate(post.content, length: 100) %></p>
           </div>
         <% end %>
