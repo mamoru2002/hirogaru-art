@@ -58,3 +58,4 @@ end
 
 gem "devise"
 gem 'mini_magick'
+gem 'whenever', require: false

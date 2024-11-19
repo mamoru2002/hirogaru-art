@@ -32,3 +32,76 @@ ja:
       almost_x_years:
         one: "ほぼ1年"
         other: "ほぼ%{count}年"
+  devise:
+    failure:
+      already_authenticated: "既にログインしています。"
+      inactive: "アカウントが有効ではありません。"
+      invalid: "ログイン情報が正しくありません。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "アカウントはロック寸前です。次回ログインに失敗するとロックされます。"
+      not_found_in_database: "ログイン情報が正しくありません。"
+      timeout: "セッションがタイムアウトしました。再度ログインしてください。"
+      unauthenticated: "ログインしてください。"
+      unconfirmed: "メールアドレスの確認が必要です。"
+    passwords:
+      no_token: "トークンが無効です。"
+      send_instructions: "パスワードリセットの案内を送信しました。"
+      updated: "パスワードが変更されました。"
+      updated_not_active: "パスワードが変更されましたが、アカウントは無効です。"
+    registrations:
+      signed_up: "アカウント登録が完了しました。"
+      signed_up_but_inactive: "アカウント登録が完了しましたが、アクティベーションが必要です。"
+      signed_up_but_locked: "アカウント登録が完了しましたが、アカウントがロックされています。"
+      signed_up_but_unconfirmed: "アカウント登録が完了しました。メールで送信されたリンクをクリックしてアカウントを有効化してください。"
+      update_needs_confirmation: "メールアドレスが変更されました。新しいメールアドレスを確認してください。"
+      updated: "アカウント情報が更新されました。"
+    confirmations:
+      confirmed: "メールアドレスが確認されました。"
+      send_instructions: "確認メールを送信しました。"
+      send_paranoid_instructions: "登録されていないメールアドレスには送信されません。"
+    unlocks:
+      send_instructions: "アカウントロック解除の案内を送信しました。"
+      send_paranoid_instructions: "登録されていないメールアドレスには送信されません。"
+      unlocked: "アカウントロックが解除されました。"
+    mailer:
+      confirmation_instructions: "メールアドレス確認のご案内"
+      reset_password_instructions: "パスワードリセットのご案内"
+      unlock_instructions: "アカウントロック解除のご案内"
+      email_changed: "メールアドレス変更のご案内"
+      password_change: "パスワード変更のご案内"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "メールアドレスを入力してください"
+              invalid: "メールアドレスの形式が正しくありません"
+              taken: "このメールアドレスは既に使用されています"
+            password:
+              blank: "パスワードを入力してください"
+              too_short: "パスワードは%{count}文字以上で入力してください"
+              confirmation: "パスワード確認が一致しません"
+            current_password:
+              blank: "現在のパスワードを入力してください"
+              invalid: "現在のパスワードが正しくありません"
+            username:
+              blank: "ユーザー名を入力してください"
+              too_long: "ユーザー名は%{count}文字以内で入力してください"
+              too_short: "ユーザー名は%{count}文字以上で入力してください"
+            confirmation_token:
+              invalid: "確認トークンが無効です"
+            reset_password_token:
+              blank: "リセットトークンがありません"
+              invalid: "リセットトークンが無効です"
+  errors:
+    messages:
+      not_found: "該当データが見つかりませんでした"
+      already_confirmed: "メールアドレスは既に確認済みです"
+      confirmation_period_expired: "確認リンクの有効期限が切れています。再度お試しください。"
+      expired: "有効期限が切れています"
+      not_saved:
+        one: "エラーのため保存されませんでした: 1件のエラーがあります"
+        other: "エラーのため保存されませんでした: %{count}件のエラーがあります"
+      blank: "を入力してください"
+      invalid: "が無効です"

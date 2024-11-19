@@ -1,0 +1,120 @@
+/* 全体のスタイル */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* タイトル */
+  .login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* フォーム */
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* ボタン */
+  .form-actions {
+    text-align: center;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ゲストログイン */
+  .guest-login {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .guest-login-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #34c759;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .guest-login-btn:hover {
+    background-color: #28a745;
+  }
+  
+  .guest-login-note {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 10px;
+  }
+
+  .devise-links-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .devise-links-container a {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .devise-links-container a:hover {
+    color: #0056b3;
+  }
