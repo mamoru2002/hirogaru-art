@@ -2,27 +2,23 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
   database: hirogaru_art_development
   username: hirogaru_art
-  password: kaki
-  host: localhost
-  port: 5432
+  password: "kaki"
 
 test:
   <<: *default
   database: hirogaru_art_test
   username: hirogaru_art
-  password: kaki
-  host: localhost
-  port: 5432
+  password: "kaki"
 
 production:
   <<: *default
   database: hirogaru_art_production
   username: hirogaru_art
   password: <%= ENV["HIROGARU_ART_DATABASE_PASSWORD"] %>
-  host: localhost
-  port: 5432
