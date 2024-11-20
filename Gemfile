@@ -60,4 +60,4 @@ gem "devise"
 gem 'mini_magick'
 gem 'whenever', require: false
 
-ruby '3.2.0'
+ruby '3.1.6'
