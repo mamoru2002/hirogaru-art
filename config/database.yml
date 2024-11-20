@@ -7,7 +7,7 @@ development:
   <<: *default
   database: hirogaru_art_development
   username: hirogaru_art
-  password: your_secure_password
+  password: kaki
   host: localhost
   port: 5432
 
@@ -15,7 +15,7 @@ test:
   <<: *default
   database: hirogaru_art_test
   username: hirogaru_art
-  password: your_secure_password
+  password: kaki
   host: localhost
   port: 5432
 
