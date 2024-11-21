@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # ゲストログイン
   devise_scope :user do
-    post 'users/guest_login', to: 'users/sessions#guest_login', as: :guest_login
+    post 'guest_login', to: 'users/sessions#guest_login', as: :guest_login
   end
 
   # ホーム画面を投稿一覧に設定
