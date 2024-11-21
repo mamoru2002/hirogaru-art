@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  # ゲストログイン
+  devise_scope :user do
+    post 'users/guest_login', to: 'users/sessions#guest_login', as: :guest_login
+  end
+
   # ホーム画面を投稿一覧に設定
   root "posts#index"
 
@@ -18,8 +23,4 @@ Rails.application.routes.draw do
 
   # 投稿関連
   resources :posts
-
-  devise_scope :user do
-    post 'users/guest_login', to: 'users/sessions#guest_login', as: :guest_login
-  end
 end
