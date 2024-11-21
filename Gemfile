@@ -60,4 +60,4 @@ gem "devise"
 gem 'mini_magick'
 gem 'whenever', require: false
 gem 'zeitwerk', '< 2.7'
-ruby '3.2.2'
+ruby '3.1.6'
