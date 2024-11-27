@@ -16,8 +16,8 @@
   </div>
 
   <div class="guest-login">
-    <%= form_with url: guest_login_path, method: :post, local: true do %>
-      <%= submit_tag "ゲストログイン", class: "guest-login-btn" %>
+    <%= form_for :guest, url: guest_login_path, method: :post, html: { local: true } do |g| %>
+      <%= g.submit "ゲストログイン", class: "guest-login-btn" %>
     <% end %>
     <p class="guest-login-note">ゲストログインの場合、データは定期的にリセットされます</p>
   </div>

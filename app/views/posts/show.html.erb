@@ -6,6 +6,8 @@
           class: "user-icon" %>
     <% end %>
     <div class="user-details">
+
+      
       <h1 class="post-title"><%= @post.title %></h1>
       <p class="post-meta">
         <%= link_to @post.user.username, user_path(@post.user), class: "username-link" %> 
