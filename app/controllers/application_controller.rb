@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   layout :layout_by_resource
 
+    protect_from_forgery with: :exception
+    skip_before_action :verify_authenticity_token, if: :devise_controller?
+
   private
 
   def layout_by_resource
