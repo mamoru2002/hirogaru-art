@@ -2,7 +2,7 @@
   <!-- 投稿ヘッダー -->
   <div class="post-header">
     <%= link_to user_path(@post.user) do %>
-      <%= image_tag @post.user.profile_image.attached? ? @post.user.profile_image.variant(resize_to_fill: [50, 50]) : 'default_avatar.png', 
+      <%= image_tag @post.user.profile_image.attached? ? @post.user.profile_image.variant(resize_to_fill: [50, 50]) : 'default_profile_image.png', 
           class: "user-icon" %>
     <% end %>
     <div class="user-details">
