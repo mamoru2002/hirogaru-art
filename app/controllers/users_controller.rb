@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show]
   before_action :ensure_correct_user, only: [:edit, :update]
-
-  def index
-    @users = User.all
-  end
 
   def show
     # @userは set_user で取得済み
