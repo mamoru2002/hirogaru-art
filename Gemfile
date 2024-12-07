@@ -3,14 +3,24 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+# Railsのアセットパイプラインを提供するライブラリ
+# CSSやJavaScript、画像などの静的ファイルを以下のように管理
+# ファイルを圧縮してサイズを小さくする
+# 開発と本番環境で異なる方法でアセットを提供する（例: キャッシュバスティング）
+# ファイル間の依存関係を解決する（例: JavaScriptで他のモジュールを読み込む）
 gem "sprockets-rails"
 # Use postgresql as the database for Active Record
+# pgはPostgreSQLデータベースへの接続を可能にするドライバ
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
+# Webサーバーor本番ではアプリケーションサーバに使われることが多い
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+# WebpackやViteなどのビルドツールを使わずにJavaScriptモジュールを管理
+# ブラウザ上で直接JavaScriptモジュールをインポートできる
 gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# 通常のマルチページアプリケーションに近い形式でSPAのようなUXを提供
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -57,7 +67,7 @@ group :test do
 end
 
 gem "devise"
-gem 'mini_magick'
-gem 'whenever', require: false
-gem 'zeitwerk', '< 2.7'
-ruby '3.1.6'
+gem "mini_magick"
+gem "whenever", require: false
+gem "zeitwerk", "< 2.7"
+ruby "3.1.6"
