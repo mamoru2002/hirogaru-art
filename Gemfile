@@ -2,30 +2,40 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 # Railsのアセットパイプラインを提供するライブラリ
-# CSSやJavaScript、画像などの静的ファイルを以下のように管理
-# ファイルを圧縮してサイズを小さくする
-# 開発と本番環境で異なる方法でアセットを提供する（例: キャッシュバスティング）
-# ファイル間の依存関係を解決する（例: JavaScriptで他のモジュールを読み込む）
+# CSSやJavaScript、画像などの静的ファイルを管理
+# 1ファイルを圧縮してサイズを小さくする
+# 2開発と本番環境で異なる方法でアセットを提供する（例: キャッシュバスティング）
+# 3ファイル間の依存関係を解決する（例: JavaScriptで他のモジュールを読み込む）
 gem "sprockets-rails"
+
 # Use postgresql as the database for Active Record
 # pgはPostgreSQLデータベースへの接続を可能にするドライバ
 gem "pg", "~> 1.1"
+
 # Use the Puma web server [https://github.com/puma/puma]
 # Webサーバーor本番ではアプリケーションサーバに使われることが多い
 gem "puma", ">= 5.0"
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 # WebpackやViteなどのビルドツールを使わずにJavaScriptモジュールを管理
 # ブラウザ上で直接JavaScriptモジュールをインポートできる
 gem "importmap-rails"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 # 通常のマルチページアプリケーションに近い形式でSPAのようなUXを提供
 gem "turbo-rails"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# JavaScriptフレームワーク
 gem "stimulus-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
+# JSON形式のデータを生成するための内部DSLを提供する
 gem "jbuilder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -36,12 +46,15 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# タイムゾーン情報を提供
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
+# コードをキャッシュ
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# Active Storageで画像の変換（リサイズや回転）を行うために必要
 gem "image_processing", "~> 1.2"
 
 group :development, :test do
@@ -65,9 +78,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
+# 認証機能
 gem "devise"
+# 画像操作のためのライブラリ。Active Storageで画像を編集する際に使用
 gem "mini_magick"
+# 定期的なタスク（スケジュールされたジョブ）を簡単に設定
 gem "whenever", require: false
 gem "zeitwerk", "< 2.7"
 ruby "3.1.6"
